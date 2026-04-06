@@ -23,7 +23,6 @@ public class HomeTest extends BaseTest {
 
         Collections.sort(actualTitles,Collections.reverseOrder());
 
-        //Capturamos los textos en la posicion inicial
         List<String> actualTitlesZA = homePage.getTitlesProductsOriginal();
 
         Assert.assertEquals(actualTitles,actualTitlesZA,"Filter order no funciona");
