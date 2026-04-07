@@ -16,8 +16,8 @@ public class LoginPage extends BasePage{
     }
 
     public void fillLoginForm(String user,String password){
-        find(inputUserName).sendKeys(user);
-        find(inputPassword).sendKeys(password);
+        type(inputUserName,user);
+        type(inputPassword,password);
         click(btnLogin);
     }
 
