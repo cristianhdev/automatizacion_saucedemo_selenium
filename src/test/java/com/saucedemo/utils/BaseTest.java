@@ -4,10 +4,12 @@ package com.saucedemo.utils;
 
 import com.saucedemo.pages.HomePage;
 import com.saucedemo.pages.LoginPage;
+import com.saucedemo.pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
@@ -24,6 +26,7 @@ public class BaseTest {
 
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected ProductsPage productsPage;
 
     @BeforeMethod
     public void setup(){
@@ -46,9 +49,10 @@ public class BaseTest {
 
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
+        productsPage = new ProductsPage(driver);
     }
 
-    @AfterTest
+    @AfterMethod(alwaysRun = true)
     public  void tearDown(){
         if(driver != null){
             driver.quit();
