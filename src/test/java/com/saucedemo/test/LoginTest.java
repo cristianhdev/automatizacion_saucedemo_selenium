@@ -6,7 +6,8 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Login Success", priority = 2)
+
+    @Test(invocationCount = 1, description = "Login Success", priority = 1)
     public void testLoginSuccess(){
 
         loginPage.fillLoginForm("standard_user", "secret_sauce");
